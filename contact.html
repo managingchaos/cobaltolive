@@ -93,26 +93,29 @@
 
   <h1>Contact Cobalt Olive</h1>
   <form action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="f171790c-664c-41f8-beaf-e802f06a8a1b" />
-    <input type="hidden" name="redirect" value="https://cobaltolive.com/thank-you.html" />
+  <input type="hidden" name="access_key" value="f171790c-664c-41f8-beaf-e802f06a8a1b" />
+  <input type="hidden" name="redirect" value="https://cobaltolive.com/thank-you.html" />
 
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required />
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required />
 
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" required />
-    <div class="consent">
-      By providing a telephone number and submitting this form you are consenting to be contacted by SMS text message. Message &amp; data rates may apply. Message frequency may vary. Reply HELP for more information. You can reply STOP to opt-out of further messaging. View our <a href="https://cobaltolive.com/privacy.html" target="_blank">privacy policy</a>.
-    </div>
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone" required />
+  <div class="consent">
+    By providing a telephone number and submitting this form you are consenting to be contacted by SMS text message. Message &amp; data rates may apply. Message frequency may vary. Reply HELP for more information. You can reply STOP to opt-out of further messaging. View our <a href="https://cobaltolive.com/privacy.html" target="_blank">privacy policy</a>.
+  </div>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required />
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required />
 
-    <label for="reason">Reason for Contact</label>
-    <textarea id="reason" name="reason" rows="4" required></textarea>
+  <label for="reason">Reason for Contact</label>
+  <textarea id="reason" name="reason" rows="4" required></textarea>
 
-    <button type="submit">Submit</button>
-  </form>
+  <!-- Honeypot field for spam protection -->
+  <input type="checkbox" name="botcheck" style="display:none;">
+
+  <button type="submit">Submit</button>
+</form>
 
   <footer>
     &copy; 2025 Cobalt Olive. All rights reserved.<br>
