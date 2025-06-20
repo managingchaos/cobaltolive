@@ -19,6 +19,7 @@
       min-height: 100vh;
       font-family: sans-serif;
       text-align: center;
+      animation: fadeIn 1s ease-in-out forwards;
     }
     img.logo {
       width: 300px;
@@ -37,18 +38,12 @@
       margin: 1rem 2rem;
       max-width: 400px;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background: #0047AB;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-    a.button:hover {
-      background: #00388f;
+    #jar-message {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #666;
     }
     footer {
       position: absolute;
@@ -63,13 +58,27 @@
       font-style: italic;
       color: #ccc;
     }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
   </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('jar-message').style.opacity = '1';
+      }, 10000); // Show after 10 seconds
+
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 15000); // Redirect after 15 seconds
+    });
+  </script>
 </head>
 <body>
-  <img src="404_olive_stem.png" alt="404 - Cobalt Olive" class="logo" width="300" height="300">
+  <img src="404_olive_stem.webp" alt="404 - Cobalt Olive" class="logo" width="300" height="300">
 
- <br><br>
   <p>Olive not found.</p>
+  <p id="jar-message">Opening a new jar…</p>
 
   <footer>
     &copy; 2025 Cobalt Olive. All rights reserved.<br>
