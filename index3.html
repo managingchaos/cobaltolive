@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cobalt Olive</title>
+  <meta name="description" content="Discover Cobalt Olive, a cutting-edge media, advertising, and marketing company dedicated to delivering creative and impactful solutions. Connect with us to elevate your brand through innovative strategies and dynamic storytelling. Contact: hello@cobaltolive.com.">
+  <meta name="theme-color" content="#e9feff">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preload" as="image" href="olive.webp" type="image/webp">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e9feff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    img.logo {
+      width: 200px;
+      height: 200px;
+      max-width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+    }
+    img.logo:hover {
+      transform: scale(1.03);
+    }
+    a {
+      color: #0047AB;
+      margin-top: 20px;
+      text-decoration: none;
+      font-size: 1rem;
+      opacity: 0;
+      animation: fadeInText 1s ease-in-out forwards;
+      animation-delay: 0.5s;
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.75rem;
+      color: #999;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .privacy {
+      font-size: 0.65rem;
+      font-style: italic;
+      color: #ccc;
+    }
+    .privacy a {
+      color: #ccc;
+      text-decoration: underline;
+      font-style: italic;
+      font-size: inherit;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @keyframes fadeInText {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <img src="olive.webp" alt="Cobalt Olive" class="logo" width="200" height="200">
+  <a href="mailto:hello@cobaltolive.com">hello@cobaltolive.com</a>
+<footer>
+  &copy; 2025 Cobalt Olive. All rights reserved.<br>
+  <span class="privacy">
+    This site collects limited anonymous data for performance and traffic insights.
+    <a href="/privacy.html" style="color: #ccc;">Privacy policy</a>.
+    <a href="/contact.html" style="color: #ccc;">Contact.</a>
+  </span>
+</footer>
+  <img src="/logger-25" style="display: none;" alt="">
+</body>
+</html>
