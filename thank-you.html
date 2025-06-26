@@ -4,83 +4,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thank You – Cobalt Olive</title>
-  <meta name="description" content="Thank you for contacting Cobalt Olive.">
-  <meta name="theme-color" content="#e9feff">
+  <meta name="description" content="Thank you for contacting Cobalt Olive. We'll be in touch shortly.">
+  <meta name="theme-color" content="#d9d9d9">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/odl3tlj.css">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #e9feff;
+      background: #d9d9d9;
+      font-family: "acumin-pro-extra-condensed", sans-serif;
+      color: #163359;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #d9d9d9;
+    }
+
+    .top-bar img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #586f8c;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+
+    main {
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: sans-serif;
       text-align: center;
+      padding: 4rem 2rem;
     }
-    img.logo {
-      width: 200px;
-      height: auto;
-      margin-bottom: 1.5rem;
-      transition: transform 0.3s ease-in-out;
-    }
-    img.logo:hover {
-      transform: scale(1.03);
-    }
+
     h1 {
-      color: #0047AB;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      font-size: 4rem;
+      color: #586f8c;
+      margin-bottom: 1rem;
     }
+
     p {
-      font-size: 1rem;
-      color: #333;
-      max-width: 400px;
-      margin: 0 1rem 2rem;
+      font-size: 1.5rem;
+      font-weight: 300;
+      max-width: 600px;
     }
-    a.button {
-      display: inline-block;
+
+    .button {
+      margin-top: 2rem;
+      background-color: #d9d9d9;
+      border: 2px solid black;
+      border-radius: 12px;
       padding: 0.75rem 1.5rem;
-      background-color: #0047AB;
-      color: white;
       text-decoration: none;
-      border-radius: 4px;
-      font-size: 1rem;
-      transition: background 0.3s ease-in-out;
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 500;
+      position: relative;
+      transition: transform 0.1s ease-in-out;
     }
-    a.button:hover {
-      background-color: #00388f;
-    }
-    footer {
+
+    .button::after {
+      content: '';
       position: absolute;
-      bottom: 20px;
-      font-size: 0.75rem;
-      color: #999;
-      text-align: center;
-      line-height: 1.4;
+      top: 6px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #c7c7c7;
+      border: 2px solid black;
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+      z-index: -1;
+      transition: all 0.1s ease-in-out;
     }
+
+    .button:hover {
+      animation: wiggle 0.4s ease-in-out;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: translateY(2px) rotate(0deg); }
+      25% { transform: translateY(2px) rotate(1deg); }
+      50% { transform: translateY(2px) rotate(-1deg); }
+      75% { transform: translateY(2px) rotate(1deg); }
+    }
+
+    .button:active {
+      transform: translateY(6px);
+    }
+
+    .button:active::after {
+      opacity: 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 1rem;
+      color: #999;
+      margin: 4rem 0 1rem;
+    }
+
     .privacy {
-      font-size: 0.65rem;
+      font-size: 1rem;
       font-style: italic;
-      color: #ccc;
+      color: #999;
+    }
+
+    .privacy a {
+      color: #999;
     }
   </style>
 </head>
 <body>
-  <img src="olive.webp" alt="Cobalt Olive Logo" class="logo" width="200" height="200">
-  <h1>Thanks!</h1>
-  <p>Message received. We'll be in touch soon.</p>
-  <a href="/" class="button">Return to Home</a>
 
+  <!-- Top Nav -->
+  <div class="top-bar">
+    <a href="/"><img src="cobalt_olive_full_logo.webp" alt="Cobalt Olive logo" loading="lazy"></a>
+    <nav>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+
+  <!-- Message -->
+  <main>
+    <h1>Thank You!</h1>
+    <p>Your message has been received. We'll be in touch shortly.</p>
+    <a href="/" class="button">Return to Homepage</a>
+  </main>
+
+  <!-- Footer -->
   <footer>
     &copy; 2025 Cobalt Olive. All rights reserved.<br>
     <span class="privacy">
       This site collects limited anonymous data for performance and traffic insights.
-      <a href="/privacy.html" style="color: #ccc;">Privacy policy</a>.
-      <a href="/contact.html" style="color: #ccc;">Contact</a>.
+      <a href="/privacy.html">Privacy policy</a>.
+      <a href="/contact.html">Contact</a>.
     </span>
   </footer>
+
 </body>
 </html>
