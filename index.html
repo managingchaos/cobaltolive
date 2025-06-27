@@ -17,17 +17,14 @@
       color: #163359;
     }
 
-    h1 {
+    /* Fonts */
+    h1, h2 {
       font-weight: 600;
       font-style: normal;
-      font-size: 2.25rem;
-      color: #586f8c;
-      margin-bottom: 0.25rem;
+      color: #163359;
     }
 
     h2 {
-      font-weight: 600;
-      font-style: normal;
       font-size: 4.5rem;
       color: #163359;
       margin-bottom: 2rem;
@@ -47,44 +44,10 @@
       font-size: 1.5rem;
     }
 
-    nav a, .cta a.button {
+    nav a {
       font-weight: 300;
       font-style: normal;
       font-family: "acumin-pro-extra-condensed", sans-serif;
-    }
-
-    /* Fade-ins */
-    .top-bar, header, .intro-text {
-      opacity: 0;
-      transform: translateY(-10px);
-      animation: fadeInSlideDown 0.6s ease-out forwards;
-    }
-
-    .top-bar {
-      animation-delay: 0s;
-    }
-
-    header {
-      animation-delay: 0.3s;
-    }
-
-    .intro-text {
-      animation: fadeInSlideUp 0.8s ease-out forwards;
-      animation-delay: 0.6s;
-    }
-
-    @keyframes fadeInSlideDown {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInSlideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .top-bar {
@@ -93,6 +56,9 @@
       align-items: center;
       padding: 1rem 2rem;
       background: #d9d9d9;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .top-bar img {
@@ -113,6 +79,9 @@
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     header img {
@@ -121,19 +90,20 @@
       margin-bottom: 1rem;
     }
 
+    .intro-line {
+      max-width: 900px;
+      padding: 0 3rem;
+      margin: 2rem auto 3.5rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
     section {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem 4rem;
-    }
-
-    .intro-text {
-      text-align: center;
-      font-size: 2rem;
-      margin: 3rem auto;
-      padding: 1.5rem;
-      max-width: 900px;
-      transform: translateY(10px);
     }
 
     .service-grid {
@@ -156,13 +126,8 @@
       max-width: 30%;
       min-width: 280px;
       opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-
-    .service-block.animate {
-      opacity: 1;
-      transform: translateY(0);
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .service-block img {
@@ -176,54 +141,68 @@
       text-align: center;
       margin: 3rem 0;
       font-weight: bold;
+      animation: wiggle 1.2s infinite ease-in-out alternate;
     }
 
-    .cta a.button {
-      background-color: #d9d9d9;
-      border: 2px solid black;
-      border-radius: 12px;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      color: black;
-      font-size: 1.5rem;
-      font-weight: 500;
+    .button-10 {
       position: relative;
-      transition: transform 0.1s ease-in-out;
       display: inline-block;
+      cursor: pointer;
+      outline: none;
+      border: 0;
+      vertical-align: middle;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-family: inherit;
+      font-weight: 600;
+      color: #163359;
+      text-transform: uppercase;
+      padding: 1.25em 2em;
+      background: #d9d9d9;
+      border: 2px solid #586f8c;
+      border-radius: 0.75em;
+      transform-style: preserve-3d;
+      transition: transform 150ms ease, background 150ms ease;
     }
 
-    .cta a.button::after {
-      content: '';
+    .button-10::before {
       position: absolute;
-      top: 6px;
-      left: 0;
+      content: "";
       width: 100%;
       height: 100%;
-      background-color: #c7c7c7;
-      border: 2px solid black;
-      border-top: none;
-      border-radius: 0 0 12px 12px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #586f8c;
+      border-radius: inherit;
+      box-shadow: 0 0 0 2px #586f8c, 0 0.625em 0 0 #d9d9d9;
+      transform: translate3d(0, 0.75em, -1em);
+      transition: transform 150ms ease, box-shadow 150ms ease;
       z-index: -1;
-      transition: all 0.1s ease-in-out;
     }
 
-    .cta a.button:hover {
-      animation: wiggle 0.4s ease-in-out;
+    .button-10:hover {
+      transform: translate(0, 0.25em);
+    }
+
+    .button-10:hover::before {
+      box-shadow: 0 0 0 2px #586f8c, 0 0.5em 0 0 #d9d9d9;
+      transform: translate3d(0, 0.5em, -1em);
+    }
+
+    .button-10:active {
+      transform: translate(0em, 0.75em);
+    }
+
+    .button-10:active::before {
+      box-shadow: 0 0 0 2px #586f8c, 0 0 #d9d9d9;
+      transform: translate3d(0, 0, -1em);
     }
 
     @keyframes wiggle {
-      0%, 100% { transform: translateY(2px) rotate(0deg); }
-      25% { transform: translateY(2px) rotate(1deg); }
-      50% { transform: translateY(2px) rotate(-1deg); }
-      75% { transform: translateY(2px) rotate(1deg); }
-    }
-
-    .cta a.button:active {
-      transform: translateY(6px);
-    }
-
-    .cta a.button:active::after {
-      opacity: 0;
+      0% { transform: rotate(-1deg); }
+      100% { transform: rotate(1deg); }
     }
 
     footer {
@@ -233,16 +212,7 @@
       margin: 4rem 0 1rem;
       opacity: 0;
       transform: translateY(20px);
-      transition: all 0.6s ease-out;
-    }
-
-    footer.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer a {
-      color: #666;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .privacy {
@@ -254,7 +224,7 @@
 </head>
 <body>
 
-  <div class="top-bar">
+  <div class="top-bar fade-in">
     <a href="/"><img src="cobalt_olive_full_logo.webp" alt="Cobalt Olive logo" loading="lazy"></a>
     <nav>
       <a href="/about.html">About</a>
@@ -264,43 +234,43 @@
     </nav>
   </div>
 
-  <header>
+  <header class="fade-in">
     <img src="cobalt_olive_logo.webp" alt="Cobalt Olive" loading="lazy">
     <h2>Your Bespoke Creative & Strategic Partner</h2>
   </header>
 
-  <section>
-    <p class="intro-text">
-      Part design shop, part marketing firm, part fixer. We help clients clarify, express, and amplify their brand story across the channels that matter most.
-    </p>
+  <div class="intro-line fade-in-delay">
+    <h3>Part design shop, part marketing firm, part fixer. We help clients clarify, express, and amplify their brand story across the channels that matter most.</h3>
+  </div>
 
+  <section>
     <div class="service-grid">
-      <div class="service-block">
-        <img src="your-brand-strategy-image.png" alt="Brand Strategy" loading="lazy">
+      <div class="service-block fade-in-service" style="transition-delay: 0s;">
+        <img src="your-brand-strategy-image.webp" alt="Brand Strategy" loading="lazy">
         <h3>Brand Strategy</h3>
         <p>We help clients define their positioning, purpose, and identity. Through research, audits, and workshops, we shape messaging and brand architecture to align with your goals and audience.</p>
       </div>
 
-      <div class="service-block">
-        <img src="your-design-creative-image.png" alt="Design & Creative" loading="lazy">
+      <div class="service-block fade-in-service" style="transition-delay: 0.1s;">
+        <img src="your-design-creative-image.webp" alt="Design & Creative" loading="lazy">
         <h3>Design & Creative</h3>
         <p>We bring your vision to life through thoughtful design—logos, collateral, packaging, websites, and campaigns that are both beautiful and strategic.</p>
       </div>
 
-      <div class="service-block">
-        <img src="your-research-digital-image.png" alt="Research & Digital" loading="lazy">
+      <div class="service-block fade-in-service" style="transition-delay: 0.2s;">
+        <img src="your-research-digital-image.webp" alt="Market Research & Digital" loading="lazy">
         <h3>Market Research & Digital</h3>
         <p>We analyze trends, audience behaviors, and industry benchmarks to inform decisions. We also develop tailored websites, manage content, and support email and social strategy to boost visibility and conversion.</p>
       </div>
 
-      <div class="service-block">
-        <img src="your-campaign-image.png" alt="Campaign Development" loading="lazy">
+      <div class="service-block fade-in-service" style="transition-delay: 0.3s;">
+        <img src="your-campaign-image.webp" alt="Campaign Development" loading="lazy">
         <h3>Campaign Development</h3>
         <p>From integrated marketing plans to one-off projects, we create campaigns that build loyalty, generate attention, and drive results—across digital and traditional media.</p>
       </div>
 
-      <div class="service-block">
-        <img src="your-scale-advisory-image.png" alt="Scaling & Advisory" loading="lazy">
+      <div class="service-block fade-in-service" style="transition-delay: 0.4s;">
+        <img src="your-scale-advisory-image.webp" alt="Scaling & Advisory" loading="lazy">
         <h3>Scaling & Advisory</h3>
         <p>We partner with teams on growth planning, messaging pivots, and creative strategy sprints. We also provide discreet behind-the-scenes counsel to help manage launches, brand shifts, and reputation.</p>
       </div>
@@ -308,43 +278,32 @@
 
     <div class="cta">
       <h2>Let’s Talk</h2>
-      <a href="/contact.html" class="button">Book a Discovery Session</a>
+      <a href="/contact.html" class="button-10">Book a Discovery Session</a>
     </div>
   </section>
 
-  <footer>
+  <footer class="fade-in-footer">
     &copy; 2025 Cobalt Olive. All rights reserved.<br>
     <span class="privacy">
       This site collects limited anonymous data for performance and traffic insights.
-      <a href="/privacy.html">Privacy policy</a>.
-      <a href="/contact.html">Contact</a>.
+      <a href="/privacy.html" style="color: #999;">Privacy policy</a>.
+      <a href="/contact.html" style="color: #999;">Contact</a>.
     </span>
   </footer>
 
   <script>
+    const fadeElements = document.querySelectorAll('.fade-in, .fade-in-delay, .fade-in-service, .fade-in-footer');
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          if (entry.target.classList.contains('service-block')) {
-            const index = Array.from(document.querySelectorAll('.service-block')).indexOf(entry.target);
-            setTimeout(() => {
-              entry.target.classList.add('animate');
-            }, index * 150);
-          }
-
-          if (entry.target.tagName === 'FOOTER') {
-            entry.target.classList.add('animate');
-          }
-
-          observer.unobserve(entry.target);
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
         }
       });
     }, { threshold: 0.25 });
 
-    document.querySelectorAll('.service-block, footer').forEach((el) => {
-      observer.observe(el);
-    });
+    fadeElements.forEach(el => observer.observe(el));
   </script>
-
 </body>
 </html>
