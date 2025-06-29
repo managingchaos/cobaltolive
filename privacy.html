@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Privacy Policy – Cobalt Olive</title>
-  <meta name="description" content="Cobalt Olive privacy policy. Learn what information we collect and how we protect it.">
+  <meta name="description" content="Privacy policy for Cobalt Olive.">
   <meta name="theme-color" content="#d9d9d9">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://use.typekit.net/odl3tlj.css">
@@ -17,36 +17,10 @@
       color: #163359;
     }
 
-    h1, h2, h3 {
-      color: #586f8c;
-      font-weight: 600;
-    }
-
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 2.25rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p, li {
-      font-size: 1.5rem;
-      font-weight: 300;
-      line-height: 1.6;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3rem 1rem 5rem;
+      font-size: 3.5rem;
+      text-align: center;
+      margin: 2rem 0 1rem;
     }
 
     .top-bar {
@@ -55,10 +29,55 @@
       align-items: center;
       padding: 1rem 2rem;
       background: #d9d9d9;
+      position: relative;
+      z-index: 10;
     }
 
     .top-bar img {
       height: 50px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 30px;
+      height: 25px;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: #586f8c;
+      border-radius: 4px;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu-toggle span:nth-child(1) { top: 0; }
+    .menu-toggle span:nth-child(2) { top: 10px; }
+    .menu-toggle span:nth-child(3) { top: 20px; }
+
+    .menu-toggle.open span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 10px;
+    }
+
+    .nav-wrapper {
+      position: relative;
     }
 
     nav {
@@ -71,6 +90,60 @@
       color: #586f8c;
       font-size: 1.5rem;
       font-weight: 300;
+      font-family: "acumin-pro-extra-condensed", sans-serif;
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #d9d9d9;
+        padding: 1rem 2rem;
+        border: 2px solid #586f8c;
+        border-radius: 8px;
+        gap: 1rem;
+        z-index: 9999;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      nav.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto 4rem;
+      padding: 0 2rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul li {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
     }
 
     footer {
@@ -93,66 +166,48 @@
 </head>
 <body>
 
+  <!-- Top Nav -->
   <div class="top-bar">
     <a href="/"><img src="cobalt_olive_full_logo.webp" alt="Cobalt Olive logo" loading="lazy"></a>
-    <nav>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy</a>
-    </nav>
+    <div class="nav-wrapper">
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </nav>
+    </div>
   </div>
 
-  <div class="container">
+  <main>
     <h1>Privacy Policy</h1>
-    <p><strong>Last Updated:</strong> 06/16/25</p>
-
-    <p>At Cobalt Olive, your privacy is important to us. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data. By using our website or services, you agree to the practices described below.</p>
-
-    <h2>1. Information We Collect</h2>
-    <ul>
-      <li><strong>Contact Information:</strong> Name, phone number, and email address when you fill out a form, request information, or schedule a consultation.</li>
-      <li><strong>Communication History:</strong> Records of conversations via phone, SMS, or email to help provide support and respond to inquiries.</li>
-      <li><strong>Website Usage Data:</strong> Non-identifying data such as IP address, browser type, and pages visited, collected via cookies and analytics tools.</li>
-    </ul>
-
-    <h2>2. How We Use Your Information</h2>
-    <ul>
-      <li>Respond to your inquiries or service requests</li>
-      <li>Send you updates or confirmations via email or SMS</li>
-      <li>Improve our website and services</li>
-      <li>Comply with legal obligations</li>
-    </ul>
-
-    <h2>3. SMS and Email Communication</h2>
-    <p>By providing your phone number or email, you consent to receive messages from Cobalt Olive related to your inquiry or service. Message frequency may vary. Standard messaging and data rates may apply. You may opt out at any time by replying STOP to any SMS or clicking unsubscribe in emails. For help, reply HELP or contact us directly.</p>
-
-    <h2>4. Sharing of Information</h2>
-    <p>We do not sell, rent, or trade your personal information. We may share it with trusted third-party service providers who assist us in operating our website or delivering services, but only as necessary and with appropriate confidentiality agreements.</p>
-    <p><strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</strong> All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
-
-    <h2>5. Data Security</h2>
-    <p>We implement industry-standard security measures to protect your data. However, no system is completely secure, and we cannot guarantee absolute security.</p>
-
-    <h2>6. Your Rights</h2>
-    <ul>
-      <li>Access or update your personal information</li>
-      <li>Withdraw consent or opt out of communications</li>
-      <li>Request deletion of your data</li>
-    </ul>
-    <p>To make a request, email us at: <a href="mailto:hello@cobaltolive.com">hello@cobaltolive.com</a></p>
-
-    <h2>7. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
-
-    <h2>8. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy or our data practices, please contact:</p>
     <p>
-      Cobalt Olive<br>
-      Email: <a href="mailto:hello@cobaltolive.com">hello@cobaltolive.com</a><br>
-      Website: <a href="https://www.cobaltolive.com" target="_blank">https://www.cobaltolive.com</a>
+      At Cobalt Olive, your privacy is important to us. This policy outlines how we collect, use, and protect your information.
     </p>
-  </div>
+
+    <p><strong>What we collect:</strong></p>
+    <ul>
+      <li>Basic contact information (name, email, phone) when voluntarily submitted via forms</li>
+      <li>Anonymous traffic and performance data via web analytics tools</li>
+    </ul>
+
+    <p><strong>What we do with your information:</strong></p>
+    <ul>
+      <li>Respond to inquiries or requests submitted via our contact form</li>
+      <li>Improve the performance, design, and user experience of our website</li>
+    </ul>
+
+    <p><strong>Security:</strong> We use standard precautions and secure forms to protect your data. We do not share, sell, or rent your personal information.</p>
+
+    <p><strong>Cookies:</strong> Our site may use cookies for functionality or analytics. You can disable them in your browser settings.</p>
+
+    <p><strong>Third Parties:</strong> We use Web3Forms and analytics services, which have their own privacy policies. We do not control those external providers.</p>
+
+    <p>If you have any questions or concerns about this policy, please <a href="/contact.html">contact us</a>.</p>
+  </main>
 
   <footer>
     &copy; 2025 Cobalt Olive. All rights reserved.<br>
@@ -162,6 +217,24 @@
       <a href="/contact.html">Contact</a>.
     </span>
   </footer>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('nav a');
+
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('open');
+      nav.classList.toggle('show');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('show');
+        menuBtn.classList.remove('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
