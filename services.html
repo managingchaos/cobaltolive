@@ -15,9 +15,13 @@
       background: #d9d9d9;
       font-family: "acumin-pro-extra-condensed", sans-serif;
       color: #163359;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #586f8c;
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
     .top-bar {
@@ -25,10 +29,56 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
+      background: #d9d9d9;
+      position: relative;
+      z-index: 10;
     }
 
     .top-bar img {
       height: 50px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 30px;
+      height: 25px;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: #586f8c;
+      border-radius: 4px;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu-toggle span:nth-child(1) { top: 0; }
+    .menu-toggle span:nth-child(2) { top: 10px; }
+    .menu-toggle span:nth-child(3) { top: 20px; }
+
+    .menu-toggle.open span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 10px;
+    }
+
+    .nav-wrapper {
+      position: relative;
     }
 
     nav {
@@ -41,19 +91,43 @@
       color: #586f8c;
       font-size: 1.5rem;
       font-weight: 300;
+      font-family: "acumin-pro-extra-condensed", sans-serif;
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #d9d9d9;
+        padding: 1rem 2rem;
+        border: 2px solid #586f8c;
+        border-radius: 8px;
+        gap: 1rem;
+        z-index: 9999;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      nav.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     main {
       max-width: 1200px;
       margin: 4rem auto;
       padding: 0 2rem;
-    }
-
-    h1 {
-      font-size: 4rem;
-      color: #586f8c;
-      text-align: center;
-      margin-bottom: 2rem;
     }
 
     .service-grid {
@@ -97,11 +171,6 @@
 
     .cta {
       text-align: center;
-      margin: 3rem 0 2rem;
-    }
-
-      .cta {
-      text-align: center;
       margin: 3rem 0 5rem;
     }
 
@@ -140,6 +209,7 @@
       box-shadow: 0 0 0 2px #586f8c, 0 0.625em 0 0 #b0b0b0;
       transform: translate3d(0, 0.75em, -1em);
       transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+      z-index: -1;
     }
 
     button.button-10:hover {
@@ -183,12 +253,17 @@
   <!-- Top Nav -->
   <div class="top-bar">
     <a href="/"><img src="cobalt_olive_full_logo.webp" alt="Cobalt Olive logo" loading="lazy"></a>
-    <nav>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy</a>
-    </nav>
+    <div class="nav-wrapper">
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </nav>
+    </div>
   </div>
 
   <main>
@@ -208,8 +283,7 @@
       </div>
 
       <div class="service-block">
-        <img src="your-research-digital-image.png
-        " alt="Research & Digital" loading="lazy">
+        <img src="your-research-digital-image.png" alt="Research & Digital" loading="lazy">
         <h2>Market Research</h2>
         <p>We evaluate market forces, trends, and behavior to guide strategic decisions and surface insight. Includes digital audits and creative performance evaluations.</p>
       </div>
@@ -227,10 +301,12 @@
       </div>
     </div>
 
-  <!-- CTA -->
-  <div class="cta">
-    <a href="/contact.html"><button class="button-10">Book a Discovery Session</button></a>
-  </div>
+    <!-- CTA -->
+    <div class="cta">
+      <a href="/contact.html">
+        <button class="button-10">Book a Discovery Session</button>
+      </a>
+    </div>
   </main>
 
   <footer>
@@ -241,6 +317,24 @@
       <a href="/contact.html">Contact</a>.
     </span>
   </footer>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('nav a');
+
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('open');
+      nav.classList.toggle('show');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('show');
+        menuBtn.classList.remove('open');
+      });
+    });
+  </script>
 
 </body>
 </html>
