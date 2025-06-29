@@ -56,12 +56,41 @@
 
     .menu-toggle {
       display: none;
-      font-size: 2rem;
-      background: none;
-      border: none;
+      width: 30px;
+      height: 25px;
+      position: relative;
       cursor: pointer;
-      color: #586f8c;
-      outline: none;
+      border: none;
+      background: transparent;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: #586f8c;
+      border-radius: 4px;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu-toggle span:nth-child(1) { top: 0; }
+    .menu-toggle span:nth-child(2) { top: 10px; }
+    .menu-toggle span:nth-child(3) { top: 20px; }
+
+    .menu-toggle.open span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 10px;
     }
 
     .nav-wrapper {
@@ -127,6 +156,14 @@
       padding: 0 3rem;
       margin: 2rem auto 3.5rem;
       text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .intro-line.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     section {
@@ -154,6 +191,14 @@
       flex: 1 1 calc(30% - 2rem);
       max-width: 30%;
       min-width: 280px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .service-block.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .service-block img {
@@ -241,6 +286,54 @@
       font-style: italic;
       color: #999;
     }
+   header img {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1rem;
+  animation: logo-bounce-in 0.5s ease-out 0.3s forwards;
+}
+
+@keyframes logo-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  85% {
+    transform: scale(1.025);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  /* Headline fade-in */
+h2.fade-in-headline {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 0.7s forwards;
+}
+
+/* Intro line fades in after headline */
+.intro-line.stagger-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 1.2s forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+}
   </style>
 </head>
 <body>
@@ -248,7 +341,9 @@
   <div class="top-bar">
     <a href="/"><img src="cobalt_olive_full_logo.webp" alt="Cobalt Olive logo" loading="lazy"></a>
     <div class="nav-wrapper">
-      <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
       <nav>
         <a href="/about.html">About</a>
         <a href="/services.html">Services</a>
@@ -260,10 +355,14 @@
 
   <header>
     <img src="cobalt_olive_logo.webp" alt="Cobalt Olive" loading="lazy">
-    <h2>Your Bespoke Creative & Strategic Partner</h2>
+
+<div class="intro-line stagger-fade">
+
+
+<h2 class="fade-in-headline">Your Bespoke Creative & Strategic Partner</h2>
   </header>
 
-  <div class="intro-line">
+  <div class="intro-line stagger-fade">
     <h3>Part design shop, part marketing firm, part fixer. We help clients clarify, express, and amplify their brand story across the channels that matter most.</h3>
   </div>
 
@@ -274,29 +373,25 @@
         <h3>Brand Strategy</h3>
         <p>We help clients define their positioning, purpose, and identity. Through research, audits, and workshops, we shape messaging and brand architecture to align with your goals and audience.</p>
       </div>
-
       <div class="service-block">
         <img src="your-design-creative-image.webp" alt="Design & Creative" loading="lazy">
         <h3>Design & Creative</h3>
         <p>We bring your vision to life through thoughtful design—logos, collateral, packaging, websites, and campaigns that are both beautiful and strategic.</p>
       </div>
-
       <div class="service-block">
-        <img src="your-research-digital-image.webp" alt="Market Research & Digital" loading="lazy">
+        <img src="your-research-digital-image.webp" alt="Market Research" loading="lazy">
         <h3>Market Research & Digital</h3>
-        <p>We analyze trends, audience behaviors, and industry benchmarks to inform decisions. We also develop tailored websites, manage content, and support email and social strategy to boost visibility and conversion.</p>
+        <p>We analyze trends, audience behaviors, and benchmarks to guide decisions. We also support digital efforts like content, email, and social strategy.</p>
       </div>
-
       <div class="service-block">
         <img src="your-campaign-image.webp" alt="Campaign Development" loading="lazy">
         <h3>Campaign Development</h3>
-        <p>From integrated marketing plans to one-off projects, we create campaigns that build loyalty, generate attention, and drive results—across digital and traditional media.</p>
+        <p>From integrated marketing to one-offs, we build campaigns that turn heads and move the needle—across digital and traditional platforms.</p>
       </div>
-
       <div class="service-block">
         <img src="your-scale-advisory-image.webp" alt="Scaling & Advisory" loading="lazy">
         <h3>Scaling & Advisory</h3>
-        <p>We partner with teams on growth planning, messaging pivots, and creative strategy sprints. We also provide discreet behind-the-scenes counsel to help manage launches, brand shifts, and reputation.</p>
+        <p>We partner with leadership to evolve messaging, navigate launches, and advise behind the scenes on strategy, growth, and brand pivots.</p>
       </div>
     </div>
 
@@ -310,20 +405,41 @@
     &copy; 2025 Cobalt Olive. All rights reserved.<br>
     <span class="privacy">
       This site collects limited anonymous data for performance and traffic insights.
-      <a href="/privacy.html" style="color: #999;">Privacy policy</a>.
-      <a href="/contact.html" style="color: #999;">Contact</a>.
+      <a href="/privacy.html">Privacy policy</a>.
+      <a href="/contact.html">Contact</a>.
     </span>
   </footer>
 
   <script>
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
+    // Fade in service blocks and intro line
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.25 });
 
-    toggle.addEventListener('click', () => {
+    document.querySelectorAll('.service-block, .intro-line').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Toggle menu and close on nav link click
+    const menuBtn = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('nav a');
+
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('open');
       nav.classList.toggle('show');
-      toggle.textContent = nav.classList.contains('show') ? '×' : '☰';
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('show');
+        menuBtn.classList.remove('open');
+      });
     });
   </script>
-
 </body>
 </html>
