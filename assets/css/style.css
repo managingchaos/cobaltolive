@@ -318,3 +318,72 @@ button.button-10:active::before {
   0% { transform: rotate(-1deg); }
   100% { transform: rotate(1deg); }
 }
+/* Privacy Policy and General Content Pages */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #163359;
+}
+
+.container h2 {
+  font-size: 2.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #163359;
+}
+
+.container p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: #163359;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.container ul {
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.container ul li {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #163359;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.container a {
+  color: #586f8c;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .container h1 {
+    font-size: 2.5rem;
+  }
+
+  .container h2 {
+    font-size: 1.75rem;
+  }
+
+  .container p,
+  .container ul li {
+    font-size: 1.125rem;
+  }
+}
