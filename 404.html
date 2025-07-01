@@ -9,10 +9,45 @@
   <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
   <link rel="stylesheet" href="https://use.typekit.net/odl3tlj.css">
   <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
+  <style>
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
 
-  <!-- Nav -->
+    img.logo {
+      width: 300px;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #586f8c;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 300;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .delayed {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="error-page">
+
+  <!-- Top Bar -->
   <div class="top-bar">
     <a href="/"><img src="/assets/img/cobalt_olive_full_logo.webp" alt="Cobalt Olive logo" loading="lazy"></a>
     <div class="nav-wrapper">
@@ -45,9 +80,8 @@
     </span>
   </footer>
 
-  <script src="/assets/js/script.js"></script>
   <script>
-    // Delayed message fade-in
+    // Reveal “Opening a new jar…” text
     window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         const delayed = document.querySelector('.delayed');
@@ -58,8 +92,24 @@
       setTimeout(() => {
         window.location.href = "/";
       }, 15000);
+
+      // Mobile nav logic
+      const menuBtn = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+      const navLinks = document.querySelectorAll('nav a');
+
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('open');
+        nav.classList.toggle('show');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('show');
+          menuBtn.classList.remove('open');
+        });
+      });
     });
   </script>
-
 </body>
 </html>
