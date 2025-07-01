@@ -374,3 +374,46 @@ button.button-10:active::before {
     font-size: 1.125rem;
   }
 }
+
+/* --- PRIVACY POLICY PAGE STYLES --- */
+
+.container.privacy-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1rem 5rem;
+}
+
+.container.privacy-page h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #586f8c;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.container.privacy-page h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #586f8c;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.container.privacy-page p,
+.container.privacy-page li {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #163359;
+  text-align: left;
+}
+
+.container.privacy-page ul {
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+footer .privacy a {
+  color: #999;
+}
