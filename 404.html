@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 – Page Not Found</title>
+  <meta name="description" content="Sorry, this page doesn't exist.">
+  <meta name="theme-color" content="#d9d9d9">
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/odl3tlj.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <!-- Nav -->
+  <div class="top-bar">
+    <a href="/"><img src="/assets/img/cobalt_olive_full_logo.webp" alt="Cobalt Olive logo" loading="lazy"></a>
+    <div class="nav-wrapper">
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Message -->
+  <main>
+    <img src="/assets/img/404_olive_stem.webp" alt="Olive not found" class="logo" loading="lazy">
+    <h1>Olive not found.</h1>
+    <p class="delayed">Opening a new jar…</p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Cobalt Olive. All rights reserved.<br>
+    <span class="privacy">
+      This site collects limited anonymous data for performance and traffic insights.
+      <a href="/privacy">Privacy policy</a>.
+      <a href="/contact">Contact</a>.
+    </span>
+  </footer>
+
+  <script src="/assets/js/script.js"></script>
+  <script>
+    // Delayed message fade-in
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        const delayed = document.querySelector('.delayed');
+        if (delayed) delayed.style.opacity = 1;
+      }, 10000);
+
+      // Redirect after 15 seconds
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 15000);
+    });
+  </script>
+
+</body>
+</html>

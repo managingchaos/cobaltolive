@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Cobalt Olive</title>
+  <meta name="description" content="Get in touch with Cobalt Olive.">
+  <meta name="theme-color" content="#d9d9d9">
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
+  <link rel="stylesheet" href="https://use.typekit.net/odl3tlj.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="/"><img src="/assets/img/cobalt_olive_full_logo.webp" alt="Cobalt Olive logo" loading="lazy"></a>
+    <div class="nav-wrapper">
+      <button class="menu-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <header>
+    <img src="/assets/img/cobalt_olive_logo.webp" alt="Cobalt Olive" loading="lazy">
+    <h2 class="fade-in-headline">Contact Us</h2>
+  </header>
+
+  <div class="intro-line stagger-fade">
+    <h3>Let’s start a conversation about your project or challenge.</h3>
+  </div>
+
+  <section>
+    <div class="form-container">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="f171790c-664c-41f8-beaf-e802f06a8a1b" />
+        <input type="hidden" name="redirect" value="https://cobaltolive.com/thank-you" />
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <div class="consent">
+          By providing a telephone number and submitting this form you are consenting to be contacted by SMS text message. Message &amp; data rates may apply. Message frequency may vary. Reply HELP for more information. You can reply STOP to opt-out of further messaging. View our <a href="/privacy" target="_blank">privacy policy</a>.
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="reason">Reason for Contact</label>
+        <textarea id="reason" name="reason" rows="4" required></textarea>
+
+        <button type="submit" class="button-10">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Cobalt Olive. All rights reserved.<br>
+    <span class="privacy">
+      This site collects limited anonymous data for performance and traffic insights.
+      <a href="/privacy">Privacy policy</a>.
+      <a href="/contact">Contact</a>.
+    </span>
+  </footer>
+
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>

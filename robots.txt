@@ -1,0 +1,26 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /img/
+Disallow: /images/
+Disallow: /404/
+Disallow: /thank-you/
+
+# Block common scrapers and AI crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+Sitemap: https://cobaltolive.com/sitemap.xml
