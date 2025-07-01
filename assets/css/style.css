@@ -476,3 +476,38 @@ body.contact-page .consent {
 body.contact-page .button-10 {
   margin-top: 2rem;
 }
+
+/* About page refinements */
+.about-page h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 4rem;
+  color: #586f8c;
+}
+
+.about-page h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #163359;
+  margin: 1rem 0;
+}
+
+.about-page p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-family: "acumin-pro-extra-condensed", sans-serif;
+}
+
+.about-page .section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.about-page header {
+  margin-bottom: 3rem;
+}
