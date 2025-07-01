@@ -32,7 +32,7 @@ p {
   margin: 0 auto 2rem;
 }
 
-/* Container */
+/* Container (Home & Default) */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -294,39 +294,26 @@ button.button-10:active::before {
 
 /* Animations */
 @keyframes logo-bounce-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  70% {
-    transform: scale(0.95);
-  }
-  85% {
-    transform: scale(1.025);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+  70% { transform: scale(0.95); }
+  85% { transform: scale(1.025); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes wiggle {
   0% { transform: rotate(-1deg); }
   100% { transform: rotate(1deg); }
 }
-/* Privacy Policy and General Content Pages */
 
-.container {
+/* Content Pages: Privacy, Terms, etc. */
+.content-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-.container h1 {
+.content-container h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -334,7 +321,7 @@ button.button-10:active::before {
   color: #163359;
 }
 
-.container h2 {
+.content-container h2 {
   font-size: 2.25rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -342,7 +329,7 @@ button.button-10:active::before {
   color: #163359;
 }
 
-.container p {
+.content-container p {
   font-size: 1.25rem;
   line-height: 1.7;
   font-weight: 300;
@@ -351,12 +338,12 @@ button.button-10:active::before {
   text-align: left;
 }
 
-.container ul {
+.content-container ul {
   padding-left: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.container ul li {
+.content-container ul li {
   font-size: 1.25rem;
   font-weight: 300;
   color: #163359;
@@ -364,26 +351,26 @@ button.button-10:active::before {
   line-height: 1.6;
 }
 
-.container a {
+.content-container a {
   color: #586f8c;
   text-decoration: underline;
 }
 
 @media (max-width: 600px) {
-  .container {
+  .content-container {
     padding: 1.5rem 1rem;
   }
 
-  .container h1 {
+  .content-container h1 {
     font-size: 2.5rem;
   }
 
-  .container h2 {
+  .content-container h2 {
     font-size: 1.75rem;
   }
 
-  .container p,
-  .container ul li {
+  .content-container p,
+  .content-container ul li {
     font-size: 1.125rem;
   }
 }
