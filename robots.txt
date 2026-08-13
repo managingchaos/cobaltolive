@@ -1,13 +1,6 @@
 User-agent: *
-Disallow: /assets/
-Disallow: /scripts/
-Disallow: /styles/
-Disallow: /img/
-Disallow: /images/
-Disallow: /404/
 Disallow: /thank-you/
 
-# Block common scrapers and AI crawlers
 User-agent: GPTBot
 Disallow: /
 
